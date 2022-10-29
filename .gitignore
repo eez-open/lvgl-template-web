@@ -59,6 +59,4 @@ lvgl.wasm
 build/*
 .vscode
 
-!build/index.html
-
 *.eez-project-ui-state
