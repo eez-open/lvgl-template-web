@@ -31,6 +31,8 @@ async function postProcessing(context) {
     await context.replaceInFile("README.md", "{{projectName}}", context.projectName);
 
     await context.renameFile("lvgl-template-web.eez-project", context.projectName + ".eez-project");
+    
+    await context.replaceInFile("template/manifest.json", "{{projectName}}", context.projectName);
 }
 
 module.exports = postProcessing;
