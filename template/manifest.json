@@ -7,11 +7,12 @@
         { 
             "url": "https://github.com/littlevgl/lvgl.git",
             "location": "lvgl",
-            "branch": "v8.3.3" 
+            "branch": "v8.3.0" 
         },
         {
             "url": "https://github.com/littlevgl/lv_drivers.git",
-            "location": "lv_drivers"
+            "location": "lv_drivers",
+            "branch": "v8.3.0"
         }
     ],
     "eez-project-path": "{{projectName}}.eez-project"
