@@ -1,17 +1,20 @@
 {
     "submodules": [
         {
-            "url": "https://github.com/eez-open/eez-framework",
-            "location": "eez"
+            "name": "eez-framework",
+            "repository": "https://github.com/eez-open/eez-framework",
+            "path": "eez"
         },
         { 
-            "url": "https://github.com/littlevgl/lvgl.git",
-            "location": "lvgl",
+            "name": "lvgl",
+            "repository": "https://github.com/littlevgl/lvgl.git",
+            "path": "lvgl",
             "branch": "v8.3.0" 
         },
         {
-            "url": "https://github.com/littlevgl/lv_drivers.git",
-            "location": "lv_drivers",
+            "name": "lv_drivers",
+            "repository": "https://github.com/littlevgl/lv_drivers.git",
+            "path": "lv_drivers",
             "branch": "v8.3.0"
         }
     ],
