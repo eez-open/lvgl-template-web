@@ -4278,6 +4278,10 @@
       "lvglSourceFilePath": "assets\\fonts\\ui_font_small_font.c"
     }
   ],
+  "readme": {
+    "objID": "e2540e2c-7904-4571-b35b-3b8e0d131097",
+    "readmeFile": "README.md"
+  },
   "bitmaps": [
     {
       "objID": "3a10e85f-9f8b-4f42-f71d-0db219487f31",
