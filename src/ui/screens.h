@@ -10,7 +10,13 @@ extern "C" {
 typedef struct _main_t {
     lv_obj_t *screen_obj;
     
+    lv_obj_t *obj_image_1;
+    lv_obj_t *obj_image_2;
     lv_obj_t *obj_label_1;
+    lv_obj_t *obj_button_1;
+    lv_obj_t *obj_label_2;
+    lv_obj_t *obj_button_2;
+    lv_obj_t *obj_label_3;
 } main_t;
 
 main_t *create_screen_main();
