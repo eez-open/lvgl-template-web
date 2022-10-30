@@ -30,7 +30,6 @@ static lv_obj_t *getLvglObjectFromIndex(int32_t index) {
 }
 
 static const void *getLvglImageByName(const char *name) {
-    printf("getLvglImageByName %s\n", name);
     for (size_t imageIndex = 0; imageIndex < sizeof(images) / sizeof(ext_img_desc_t); imageIndex++) {
         if (strcmp(images[imageIndex].name, name) == 0) {
             return images[imageIndex].img_dsc;
