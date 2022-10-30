@@ -44,12 +44,12 @@
         {
           "objID": "9c770003-b028-4a8b-9447-fea072e67b3a",
           "fileName": "flow_def.h",
-          "template": "#pragma once\n\n#include <eez/gui/data.h>\n#include <eez/gui/widget.h>\n\n#include \"lvgl/lvgl.h\"\n\nnamespace eez {\n\n//${eez-studio GUI_THEMES_ENUM}\n\n//${eez-studio GUI_COLORS_ENUM}\n\n//${eez-studio GUI_ASSETS_DECL_COMPRESSED}\n\n} // namespace eez\n"
+          "template": "#ifndef EEZ_LVGL_UI_FLOW_DEF_H\n#define EEZ_LVGL_UI_FLOW_DEF_H\n\n#include <stdint.h>\n\n//${eez-studio GUI_ASSETS_DECL_COMPRESSED}\n\n#endif /*EEZ_LVGL_UI_FLOW_DEF_H*/"
         },
         {
           "objID": "0f3ea37c-f0d3-4061-c693-76b52bd9d632",
-          "fileName": "flow_def.cpp",
-          "template": "#include \"flow_def.h\"\n\nnamespace eez {\n\n//${eez-studio GUI_ASSETS_DEF_COMPRESSED}\n\n} // namespace eez\n"
+          "fileName": "flow_def.c",
+          "template": "#include \"flow_def.h\"\n\n//${eez-studio GUI_ASSETS_DEF_COMPRESSED}\n"
         },
         {
           "objID": "81fa9cb7-33e4-4272-9340-49a50037b327",
