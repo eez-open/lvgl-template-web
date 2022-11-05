@@ -4,7 +4,7 @@
 
 ### Install SDL
 
-Downlad [SDL](https://www.libsdl.org/) (a graphics library to ope na window and handle the mouse). On Linux:
+Downlad [SDL](https://www.libsdl.org/) (a graphics library to open a window and handle the mouse). On Linux:
 1. Find the current version of SDL2: `apt-cache search libsdl2 (e.g. libsdl2-2.0-0)`
 2. Install SDL2: `sudo apt-get install libsdl2-2.0-0` (replace with the found version)
 3. Install SDL2 development package: `sudo apt-get install libsdl2-dev`
