@@ -15,7 +15,7 @@
       "flowSupport": true,
       "displayWidth": 800,
       "displayHeight": 480,
-      "description": "Template for LVGL eez-project for the web browser using emscripten",
+      "description": "LVGL project template for the web browser using emscripten",
       "keywords": "emscripten WebAssembly",
       "targetPlatform": "Emscripten is a complete compiler toolchain to WebAssembly, using LLVM, with a special focus on speed, size, and the Web platform.",
       "targetPlatformLink": "https://emscripten.org/",
