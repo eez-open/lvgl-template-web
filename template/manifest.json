@@ -1,10 +1,5 @@
 {
     "submodules": [
-        {
-            "name": "eez-framework",
-            "repository": "https://github.com/eez-open/eez-framework",
-            "path": "eez-framework"
-        },
         { 
             "name": "lvgl",
             "repository": "https://github.com/littlevgl/lvgl.git",
