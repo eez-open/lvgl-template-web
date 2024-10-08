@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "screens.h"
 #include "images.h"
 #include "fonts.h"
@@ -6,22 +8,28 @@
 #include "styles.h"
 #include "ui.h"
 
+#include <string.h>
+
 objects_t objects;
 lv_obj_t *tick_value_change_obj;
 
 static void event_handler_cb_main_obj1(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
-    void *flowState = e->user_data;
+    void *flowState = lv_event_get_user_data(e);
+    
     if (event == LV_EVENT_PRESSED) {
-        flowPropagateValue(flowState, 6, 0);
+        e->user_data = (void *)0;
+        flowPropagateValueLVGLEvent(flowState, 6, 0, e);
     }
 }
 
 static void event_handler_cb_main_obj2(lv_event_t *e) {
     lv_event_code_t event = lv_event_get_code(e);
-    void *flowState = e->user_data;
+    void *flowState = lv_event_get_user_data(e);
+    
     if (event == LV_EVENT_PRESSED) {
-        flowPropagateValue(flowState, 8, 0);
+        e->user_data = (void *)0;
+        flowPropagateValueLVGLEvent(flowState, 8, 0, e);
     }
 }
 
@@ -31,7 +39,6 @@ void create_screen_main() {
     objects.main = obj;
     lv_obj_set_pos(obj, 0, 0);
     lv_obj_set_size(obj, 800, 480);
-    lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
     {
         lv_obj_t *parent_obj = obj;
         {
@@ -39,16 +46,14 @@ void create_screen_main() {
             lv_obj_set_pos(obj, 130, 79);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_img_set_src(obj, &img_log_eez);
-            lv_obj_add_flag(obj, LV_OBJ_FLAG_ADV_HITTEST);
-            lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
+            lv_img_set_pivot(obj, 0, 0);
         }
         {
             lv_obj_t *obj = lv_img_create(parent_obj);
             lv_obj_set_pos(obj, 457, 79);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_img_set_src(obj, &img_logo_lvgl);
-            lv_obj_add_flag(obj, LV_OBJ_FLAG_ADV_HITTEST);
-            lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
+            lv_img_set_pivot(obj, 0, 0);
         }
         {
             lv_obj_t *obj = lv_label_create(parent_obj);
@@ -65,8 +70,6 @@ void create_screen_main() {
             lv_obj_set_pos(obj, 268, 348);
             lv_obj_set_size(obj, 100, 40);
             lv_obj_add_event_cb(obj, event_handler_cb_main_obj1, LV_EVENT_ALL, flowState);
-            lv_obj_add_flag(obj, LV_OBJ_FLAG_SCROLL_ON_FOCUS);
-            lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -85,8 +88,6 @@ void create_screen_main() {
             lv_obj_set_pos(obj, 408, 348);
             lv_obj_set_size(obj, 100, 40);
             lv_obj_add_event_cb(obj, event_handler_cb_main_obj2, LV_EVENT_ALL, flowState);
-            lv_obj_add_flag(obj, LV_OBJ_FLAG_SCROLL_ON_FOCUS);
-            lv_obj_clear_flag(obj, LV_OBJ_FLAG_SCROLLABLE);
             {
                 lv_obj_t *parent_obj = obj;
                 {
@@ -116,7 +117,13 @@ void tick_screen_main() {
 }
 
 
+static const char *screen_names[] = { "Main" };
+static const char *object_names[] = { "main", "obj0", "obj1", "obj2" };
+
 void create_screens() {
+    eez_flow_init_screen_names(screen_names, sizeof(screen_names) / sizeof(const char *));
+    eez_flow_init_object_names(object_names, sizeof(object_names) / sizeof(const char *));
+    
     lv_disp_t *dispp = lv_disp_get_default();
     lv_theme_t *theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED), false, LV_FONT_DEFAULT);
     lv_disp_set_theme(dispp, theme);
